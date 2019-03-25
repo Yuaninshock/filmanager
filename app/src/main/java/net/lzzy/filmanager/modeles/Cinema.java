@@ -1,0 +1,84 @@
+package net.lzzy.filmanager.modeles;
+
+import net.lzzy.sqllib.Ignored;
+import net.lzzy.sqllib.Sqlitable;
+
+
+
+/**
+ * Created by lzzy_gxy on 2019/3/11.
+ * Description:
+ */
+
+public class Cinema extends BastEntity implements Sqlitable {
+    private String name;
+    private String location;
+    private String province;
+    private String city;
+    private String area;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    @Override
+    public boolean needUpdate() {
+        return false;
+    }
+    @Override
+    public String toString() {
+        return location+name;
+    }
+
+    /*重写equals方法*/
+   /* @Override
+    public boolean equals(Object obj){
+        if(obj==this){
+            return true;
+        }
+        if (obj==null){
+            return false;
+        }
+        if(obj instanceof Cinema){
+            return this.toString().equals(obj.toString());
+        }else {
+            return false;
+        }
+    }*/
+}
